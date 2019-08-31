@@ -3,6 +3,14 @@ def main():
 	addr = ("0.0.0.0", 17891)
 	sock.bind(addr)
 	sock.listen(5)
-	while(true):
+	while True:
 		(connectedSock, clientAddress) = sock.accept()
+	
+		try:
+			msg = sock.recv(1024).decode()
+			msg = "Length of " + msg + ": " + len(msg)
+			sock.sendall(msg.encode())
 
+		except ConnectionAbortedError:
+			sock.close()
+		
