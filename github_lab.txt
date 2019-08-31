@@ -1,4 +1,4 @@
 hello world hello
-this is a simple text file
+this is a simple haiku
 hello world hello
 
