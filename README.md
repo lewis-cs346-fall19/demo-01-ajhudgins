@@ -1,4 +1,4 @@
 # demo-01-ajhudgins
-demo-01-ajhudgins created by GitHub Classroom
 
-This is our readme
+To run this program, run net_server.py first
+Then run net_client.py
