@@ -10,8 +10,10 @@ print(servermsg)
 for i in range(0,99):
 	sock.sendall("You're awesome * " + str(i))
 	
-	servermsg = sock.recv(1024).decode()
-	print(servermsg)
-
+	try:
+		servermsg = sock.recv(1024).decode()
+		print(servermsg)
+	except:
+		sock.close()
 sock.close()
 
