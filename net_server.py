@@ -13,9 +13,13 @@ while True:
 	conn.sendall("Hello, this is the server")
 	
 	for i in range(0,99): 
-		clientmsg = conn.recv(1024).decode()
-		print(clientmsg)
-
+		
+		try:
+			clientmsg = conn.recv(1024).decode()
+			print(clientmsg)
+		except:
+			conn.close()
+			
 		conn.sendall(clientmsg[0:14] + ", back at ya * " + str(i * i))
   
 	conn.close()
